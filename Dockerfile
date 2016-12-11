@@ -2,7 +2,7 @@ FROM ubuntu:trusty
 
 MAINTAINER ''
 
-RUN echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu precise main" >> /etc/apt/sources.list && \
+RUN echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main" >> /etc/apt/sources.list && \
   TMPNAME=$(tempfile) && \
   apt-get update >> /dev/null 2> $TMPNAME && \
   PGPKEY=`cat $TMPNAME | cut -d":" -f6 | cut -d" " -f3` && \
