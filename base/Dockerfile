@@ -1,0 +1,13 @@
+FROM ubuntu:trusty
+
+MAINTAINER k1nk33
+
+RUN apt-get update; apt-get install -y unzip wget supervisor docker.io openssh-server
+
+RUN echo 'root:k1nk33' | chpasswd
+
+RUN mkdir /var/run/sshd
+
+RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+
+EXPOSE 22

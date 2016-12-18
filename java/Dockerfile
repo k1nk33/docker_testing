@@ -1,6 +1,7 @@
-FROM ubuntu:trusty
+FROM k1:base
 
-MAINTAINER ''
+
+MAINTAINER 'k1nk33'
 
 RUN echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main" >> /etc/apt/sources.list && \
   TMPNAME=$(tempfile) && \
@@ -18,4 +19,4 @@ RUN echo "export JAVA_HOME=/usr/lib/jvm/java-7-oracle" >> ~/.bashrc
 
 #Clean up apt-repository
 RUN apt-get clean && \
-  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
